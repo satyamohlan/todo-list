@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const task = require("./models/record");
 const app = express();
 const db = require("./config/keys").MongoUri;
+require('dotenv').config();
 mongoose.connect(db, {
     useNewUrlParser: true
   })
@@ -13,8 +14,9 @@ mongoose.connect(db, {
 app.set("view engine", 'ejs');
 
 app.use(express.urlencoded({extended: false}));
-app.listen(3000, () => {
-  console.log("running at 3000")
+const port=process.env.PORT||3000;
+app.listen(port, () => {
+  console.log("running at "+port);
 });
 app.use("/css", express.static("views/css"));
 app.get("/todo", (req, res) => {
