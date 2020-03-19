@@ -4,7 +4,7 @@
   "description": "cleaniness app for clean surrounding",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index"
   },
   "author": "Satyam Ohlan",
   "license": "ISC",
